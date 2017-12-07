@@ -101,7 +101,7 @@
               <input type="text" name="NSS" value="" placeholder="Ingresa su identificador"/>
               <input type="submit" value="Buscar" name="BuscaExp" />
           </form>
-          <a href="agregarPac.jsp">Agrega un paciente</a>
+          <a href="agregarPac.jsp">Agrega un Paciente</a>
       </main>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
