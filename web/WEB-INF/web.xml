@@ -20,6 +20,10 @@
         <servlet-name>cConsulta</servlet-name>
         <servlet-class>serv.cConsulta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetExpediente</servlet-name>
+        <servlet-class>serv.GetExpediente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarDoc</servlet-name>
         <url-pattern>/AgregarDoc</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>cConsulta</servlet-name>
         <url-pattern>/cConsulta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetExpediente</servlet-name>
+        <url-pattern>/GetExpediente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
