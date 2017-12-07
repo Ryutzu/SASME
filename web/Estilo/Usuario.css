@@ -1,0 +1,61 @@
+   body{
+    margin: 0;
+    overflow-x: no-display;
+}
+a{
+     text-decoration: none;
+     color: inherit;
+}
+nav{
+    background-color: #96305A;
+    font-family: 'Source Sans Pro', sans-serif;
+    position: fixed;
+    width: 15%;
+    height: 100%;     
+    z-index: 3;
+}
+li{
+    font-size: 20px;
+    color:white;
+    align-content: center;
+    text-align: center;
+}
+li:hover{
+    background-color: black;
+}
+ul{
+   padding: 0;
+   list-style-type: none;
+   margin: 0;
+   align-content: center;
+   text-align: center;
+}
+.user{
+    margin-top: 25%;
+    margin-left: 20%;
+    margin-bottom: 15%;
+    width: 60%;
+    border-radius: 35px;
+}
+.contenido{
+    position: absolute;
+    width: 85%;
+    left: 15%;
+    align-content: center;
+    text-align: center;
+}
+.fecha{
+    font-size: 20px;
+    color: darkblue;
+}
+.consultas{
+    font-size: 40px;
+    color: darkblue;
+}
+.tablas{
+     border: none; 
+     background-color: transparent;
+}
+section{
+    height: 100%;
+}
