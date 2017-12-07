@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Alumno
  */
 public class GetExpediente extends HttpServlet {
-
+    String prueba;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
