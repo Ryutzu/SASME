@@ -60,7 +60,7 @@
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item" href="nosotros.jsp">Nosotros</li>
+            <a href="nosotros.jsp"><li class="mdl-menu__item">Nosotros</li></a>
           </ul>
         </div>
       </header>

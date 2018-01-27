@@ -6,9 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" session="true"%>
 <%
-    HttpSession ses = request.getSession();
-    request.setAttribute("nom", ses.getAttribute("nombre"));
-
+        HttpSession ses = request.getSession();
+       //request.setAttribute("nom", ses.getAttribute("nombre"));
+        String usuario = "" + ses.getAttribute("ID");
+        String Tipo = ""+ses.getAttribute("Tipo");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <title>Doctor</title>
+        <title>Desarrolladores</title>
 
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
@@ -56,55 +57,55 @@
             }
 
             .demo-card-wide.mdl-card.oaxaca {
-                width: 232px;
+                width: 282px;
                 position: absolute;
                 left: 10%;
-                top: 20%;
+                top: 10%;
                 
             }
             .demo-card-wide > .mdl-card__title.oaxaca2  {
                 color: #d9006e;
-                height: 150px;
-                background: url('images/oaxaca.jpg') center / cover;
+                height: 250px;
+                background: url('Imagenes/oaxaca.jpg') center / cover;
             }
             
             .demo-card-wide.mdl-card.angel {
-                width: 232px;
+                width: 282px;
                 position: absolute;
                 left: 50%;
-                top: 20%;
+                top: 10%;
                 
             }
             .demo-card-wide > .mdl-card__title.angel2  {
                 color: #d9006e;
-                height: 150px;
-                background: url('images/reynaldo.jpg') center / cover;
+                height: 250px;
+                background: url('Imagenes/reynaldo.jpg') center / cover;
             }
             
             .demo-card-wide.mdl-card.madrigal {
-                width: 232px;
+                width: 282px;
                 position: absolute;
                 left: 10%;
-                top: 70%;
+                top: 55%;
                 
             }
             .demo-card-wide > .mdl-card__title.madrigal2  {
                 color: #d9006e;
-                height: 200px;
-                background: url('images/mad.jpg') center / cover;
+                height: 250px;
+                background: url('Imagenes/mad.jpg') center / cover;
             }
             
             .demo-card-wide.mdl-card.elimm {
-                width: 232px;
+                width: 282px;
                 position: absolute;
                 left: 50%;
-                top: 70%;
+                top: 55%;
                 
             }
             .demo-card-wide > .mdl-card__title.elimm2  {
                 color: #d9006e;
-                height: 150px;
-                background: url('images/elimm.jpg') center / cover;
+                height: 250px;
+                background: url('Imagenes/elimm.jpg') center / cover;
             }
 
             .demo-card-wide > .mdl-card__menu {
@@ -119,33 +120,45 @@
         <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
             <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
                 <div class="mdl-layout__header-row">
-                    <span class="mdl-layout-title">Perfil</span>
+                    <span class="mdl-layout-title">Desarrolladores</span>
                     <div class="mdl-layout-spacer"></div>
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
                         <i class="material-icons">more_vert</i>
                     </button>
                     <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-                        <li class="mdl-menu__item" href="nosotros.jsp">Nosotros</li>
-                        <li class="mdl-menu__item">Nuestra Pagina</li>
+                        <a href="nosotros.jsp"><li class="mdl-menu__item">Nosotros</li></a>
                     </ul>
                 </div>
             </header>
             <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
                 <header class="demo-drawer-header">
                     <div class="demo-avatar-dropdown">
-                        <span><%request.getAttribute("nom");%></span>
+                        <span><%=usuario%></span>
                         <div class="mdl-layout-spacer"></div>
                     </div>
                 </header>
                 <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-                    <a class="mdl-navigation__link" href="consulta.jsp">Consulta</a>
-                    <a class="mdl-navigation__link" href="agregarDoc.jsp">Agregar Doctor</a>
-                    <a class="mdl-navigation__link" href="agregarPac.jsp">Agregar Paciente</a>
-                    <a class="mdl-navigation__link" href="bitacora.jsp">bitacora</a>
-                    <a class="mdl-navigation__link" href="">salir</a>
-                    <div class="mdl-layout-spacer"></div>
-
-                </nav>
+            <%
+                if(Tipo.equals("Jefe_Area")){
+                    
+            %>   
+                <a class="mdl-navigation__link" href="consultarDoc.jsp">Doctores</a>
+                <a class="mdl-navigation__link" href="">Bitácoras</a>
+                <a class="mdl-navigation__link" href="">Estadísticas</a>
+            <%        
+                }else if(Tipo.equals("Doctor")){
+            %>
+                <a class="mdl-navigation__link" href="consulta.jsp">Consulta Médica</a>
+                <a class="mdl-navigation__link" href="consultaExp.jsp">Expedientes</a>
+                <a class="mdl-navigation__link" href="">Bitácoras</a>
+                <a class="mdl-navigation__link" href="">Estadísticas</a>
+            <%
+                }
+            %>
+          
+          <a class="mdl-navigation__link" href="CerrarSesion.jsp">salir</a>
+          <div class="mdl-layout-spacer"></div>
+        </nav>
             </div>
             <main class="mdl-layout__content mdl-color--grey-100 ">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp oaxaca">
@@ -156,7 +169,7 @@
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            David Oaxaca Perez
+                            David Arturo Oaxaca Perez
                         </a>
                     </div>
                 </div>
@@ -168,7 +181,7 @@
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Angel Flores Lopez 
+                            Angel Raymundo Flores López 
                         </a>
                     </div>
                 </div>
